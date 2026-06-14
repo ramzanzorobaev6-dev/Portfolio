@@ -1,0 +1,91 @@
+.heading{
+    font-family: 'Raleway';
+    font-weight: 900;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.title{
+    font-family: 'Raleway';
+    font-weight: 900;
+    color: black;
+}
+
+.subtitle{
+    font-family: 'Raleway';
+    font-weight: 700;
+}
+
+.text{
+    font-family: 'IBM Plex Mono';
+    font-weight: 400;
+    color: $color-text;
+}
+
+@mixin button-text{
+    font-family: 'IBM Plex Mono';
+    font-weight: 700;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.section{
+    margin: auto;
+    max-width: 1200px;
+    width: auto;
+}
+
+@mixin transition-smooth{
+    transition: all 0.5s ease;
+}
+
+@mixin case-studies-button{
+    @include button-text;
+
+    position: relative;
+    
+    padding: 10px 25px;
+    padding-right: 45px;
+    box-sizing: border-box;
+    
+    display: flex;
+    
+    border: none;
+    border-radius: 5px;
+    background-color: $color-green;
+    
+    @include transition-smooth;
+    
+    &::after{
+        content: '';
+    
+        position: absolute;
+        top: 13px;
+        right: 20px;
+    
+        width: 6px;
+        height: 10px;
+    
+        background-image: url(./icons/case-studies/arrow-button.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media(max-width: 1000px){
+            top: 12px;
+        }
+
+        @media(max-width: 480px){
+            width: 3px;
+            height: 5px;
+
+            top: 8px;
+            right: 10px;
+        }
+    }
+
+    @media(max-width:480px){
+        padding: 5px 15px;
+        padding-right: 25px;
+    }
+}
+
